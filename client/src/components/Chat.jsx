@@ -9,7 +9,7 @@ import icon from "../images/emoji.svg";
 import styles from "../styles/Chat.module.css";
 import Messages from "./Messages";
 
-const socket = io.connect("https://gentle-monstera-56b60c.netlify.app");
+const socket = io.connect("https://online-chat-0bnr.onrender.com/");
 
 const Chat = () => {
     const { search } = useLocation();
