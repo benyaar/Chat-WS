@@ -5,13 +5,15 @@ import {route} from "./route.js";
 import {Server} from "socket.io";
 import {addUser, findUser, getRoomUsers, removeUser} from "./user.js";
 
+
+const port = process.env.PORT || 3000;
 const app = express()
 app.use(cors({ origin: "*" }));
 app.use(route);
 
-const server = http.createServer(app);
+const index = http.createServer(app);
 
-const io = new Server(server, {
+const io = new Server(index, {
     cors: {
         origin: "*",
         methods: ["GET", "POST"],
@@ -70,6 +72,6 @@ io.on("connection", (socket) => {
     });
 });
 
-server.listen(5000, () => {
+index.listen(port, () => {
     console.log("Server is running");
 });

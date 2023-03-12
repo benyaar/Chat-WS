@@ -1,3 +1,5 @@
+import {trimStr} from "./utils.js";
+
 let users = [];
 
 export const findUser = (user) => {
